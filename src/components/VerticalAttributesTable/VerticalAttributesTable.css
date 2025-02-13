@@ -1,0 +1,18 @@
+.transparent-table {
+
+    border: none !important; /* Убираем границы */
+}
+
+.transparent-table thead {
+    display: none; /* Убираем заголовок */
+}
+
+.transparent-table tbody tr {
+    border-bottom: none !important; /* Убираем границы строк */
+}
+
+.transparent-table td {
+    border: none !important; /* Убираем границы ячеек */
+    padding: 8px; /* Опционально: делаем отступы удобнее */
+    background-color: transparent !important; /* Делаем фон прозрачным */
+}

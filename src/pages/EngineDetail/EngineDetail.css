@@ -1,0 +1,111 @@
+/* Основной контент */
+.content {
+    flex-direction: column;
+    background-image: url(/src/assets/img/rectangle.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.image-block {
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    text-align: center;
+    width: 100%;
+    max-width: 300px; /* Максимальный размер изображения */
+    height: auto; /* Сохраняем пропорции изображения */
+    margin: 33px;
+}
+
+
+/* Текст под картинкой */
+.text-block {
+    text-align: center; /* Центрируем текст */
+    margin-bottom: 50px;
+    align-items: center;
+    max-width: 900px; /* Ограничиваем ширину */
+    margin-left: auto; /* Центрируем блок по горизонтали */
+    margin-right: auto;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.description-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.engine-data {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.engine-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.engine-title-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.engine-title {
+    font-size: 2rem;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Пропорциональное распределение текста */
+.engine-title-section h2 {
+    flex: 0; /* Текст растягивается по доступной ширине */
+    text-align: center;
+    margin: 0;
+}
+
+/* Стили для эллипса в названии */
+.ellipse-title {
+    display: flex;
+    width: 18px;
+    height: 18px;
+    background-color: #000;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+}
+
+/* Стили для эллипса в описании */
+.ellipse-description {
+    display: inline-block;
+    width: 16px; /* Размер меньше для описания */
+    height: 16px;
+    background-color: #000;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin: 0 15px; /* Отступы для описания */
+}

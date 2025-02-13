@@ -1,0 +1,48 @@
+.container-fluid {
+    background: url(/src/assets/img/rectangle.png) no-repeat center/cover;
+}
+
+
+.login-card {
+    width: 600px;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    font-family: "Dela Gothic One", sans-serif;
+    font-weight: normal;
+}
+
+h2 {
+    font-family: "Agressive", sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 24px;
+}
+
+button {
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input {
+    border-radius: 12px;
+    border: 1px solid #ced4da;
+    padding: 10px 16px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+}

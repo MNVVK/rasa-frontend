@@ -1,0 +1,13 @@
+.acceptance-form {
+    font-family: "Dela Gothic One", sans-serif;
+}
+
+.acceptance-form label {
+    color: #333;
+}
+
+.acceptance-form span, input {
+    font-family: "Agressive", sans-serif;
+    margin-left: 10px;
+}
+
