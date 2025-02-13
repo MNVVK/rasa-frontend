@@ -1,0 +1,44 @@
+.container-fluid {
+    background: url(/src/assets/img/rectangle.png) no-repeat center/cover;
+}
+
+.profile-card {
+    max-width: 600px;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    font-family: "Dela Gothic One", sans-serif;
+}
+
+h2 {
+    font-family: "Agressive", sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 24px;
+}
+
+.profile-input {
+    width: 100%;
+    max-width: 400px;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+}
+
+.password-input {
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+button {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.modal {
+    font-family: "Dela Gothic One", sans-serif;
+}

@@ -1,0 +1,9 @@
+.breadcrumb-item {
+    font-family: "Dela Gothic One", sans-serif;
+}
+
+
+.breadcrumb-item a {
+    color: #222222 !important;
+    transition: 0.1s ease-in-out;
+}
