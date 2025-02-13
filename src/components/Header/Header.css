@@ -1,0 +1,38 @@
+.header {
+    background-color: #F0F0F0;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #000;
+}
+
+.logo {
+    font-family: 'Akira Expanded', sans-serif;
+    font-size: 2rem;
+    color: #000;
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+/* Ссылка-кнопка для логотипа */
+.logo-button {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none; /* Убираем подчеркивание */
+    color: inherit;
+    transition: 0.1s ease-in-out;
+}
+
+/* Отключаем эффекты при наведении */
+.logo-button:hover,
+.logo-button:focus {
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    transform: scale(1.1);
+}
+
+.navbar-toggler {
+    border-width: 2px /* Цвет рамки */
+}

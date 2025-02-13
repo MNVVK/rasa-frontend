@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) navigator.serviceWorker.register('/rasa-frontend/dev-sw.js?dev-sw', { scope: '/rasa-frontend/', type: 'classic' })
