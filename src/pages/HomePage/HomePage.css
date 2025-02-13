@@ -1,0 +1,123 @@
+/* Основной контейнер */
+.homepage {
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+/* Hero-секция (заголовок) */
+.hero-section {
+    padding: 80px 0;
+    background: url("../../assets/img/rectangle.png") no-repeat center/cover;
+    color: #222;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    animation: fadeInDown 0.5s ease-in-out;
+}
+
+@media (max-width: 720px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+}
+
+.hero-text {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 1.2rem;
+    margin-top: 24px;
+    opacity: 0.9;
+    animation: fadeInLeft 0.5s ease-in-out;
+}
+
+/* Картинка в Hero-секции */
+.hero-image {
+    height: 300px;
+    background: url("../../assets/img/plane.png") no-repeat center/cover;
+    border-radius: 10px;
+    animation: fadeInRight 0.5s ease-in-out;
+}
+
+/* Секция с преимуществами */
+.features-section {
+    margin: 80px auto;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.feature {
+    padding: 20px;
+    transition: transform 0.1s ease-in-out;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* О нас */
+.about-section {
+    background: #ffffff;
+    padding: 80px 0;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.about-section p {
+    font-family: 'Dela Gothic One', sans-serif;
+    margin: 24px 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.expert-image {
+    height: 300px;
+    background: url("../../assets/img/expert.jpg") no-repeat center/cover;
+    border-radius: 10px;
+    margin-bottom: 32px;
+}
+
+
+/* Анимации */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
