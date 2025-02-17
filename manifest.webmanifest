@@ -1,1 +1,1 @@
-{"name":"RASA","short_name":"RASA","start_url":"/","display":"standalone","background_color":"#f0f0f0","lang":"en","scope":"/rasa-frontend/","theme_color":"#f5d4d0","orientation":"portrait-primary","icons":[{"src":"img.png","type":"image/png","sizes":"512x512"}]}
+{"name":"RASA","short_name":"RASA","start_url":"/rasa-frontend","display":"standalone","background_color":"#f0f0f0","lang":"en","scope":"/rasa-frontend/","theme_color":"#f5d4d0","orientation":"portrait-primary","icons":[{"src":"img.png","type":"image/png","sizes":"512x512"}]}
