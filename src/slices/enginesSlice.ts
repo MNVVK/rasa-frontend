@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {api} from '../api';
+import {api, host} from '../api';
 import {setId, setEnginesCount} from './draftSlice';
 import {mockEngines} from '../api/data.ts';
 import {Engine} from "../api/Api.ts";
@@ -129,7 +129,10 @@ const enginesSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(getEnginesList.fulfilled, (state, action) => {
-                state.engines = action.payload.engines;
+                state.engines = action.payload.engines.map(engine => ({
+                    ...engine,
+                    image_url: engine.image_url ? engine.image_url.replace("localhost", host) : null
+                }));
                 state.loading = false;
             })
             .addCase(getEnginesList.rejected, (state) => {
@@ -151,10 +154,14 @@ const enginesSlice = createSlice({
             })
             .addCase(getEngineById.fulfilled, (state, action) => {
                 const index = state.engines.findIndex((engine) => engine.id === action.payload.id);
+                const engine = action.payload;
+                if (engine.image_url) {
+                    engine.image_url = engine.image_url.replace("localhost", host)
+                }
                 if (index !== -1) {
-                    state.engines[index] = action.payload;
+                    state.engines[index] = engine;
                 } else {
-                    state.engines.push(action.payload);
+                    state.engines.push(engine);
                 }
             })
             .addCase(uploadEngineImageAsync.pending, (state) => {
