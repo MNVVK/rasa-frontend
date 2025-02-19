@@ -17,7 +17,7 @@ export default defineConfig({
         manifest:{
           name: "RASA",
           short_name: "RASA",
-          start_url: "/",
+          start_url: "/rasa-frontend",
           display: "standalone",
           background_color: "#f0f0f0",
           theme_color: "#f5d4d0",
