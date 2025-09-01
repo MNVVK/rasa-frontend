@@ -14,7 +14,7 @@ export const mockEngines: Engine[] = [
     },
     {
         id: 2,
-        title: "ABNG-737",
+        title: "BNG-737",
         description: "Энергоэффективный двигатель с высокой тягой, используемый в популярных пассажирских самолётах.",
         engine_data: "BNG-737",
         image_url: engine2Image,

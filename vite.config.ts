@@ -4,7 +4,7 @@ import {VitePWA} from "vite-plugin-pwa";
 import mkcert from 'vite-plugin-mkcert'
 import fs from "node:fs";
 import path from "node:path";
-import {host, tauri} from "./src/api";
+import {tauri} from "./src/api";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -38,7 +38,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: `http://${host}:8000`,
+        target: 'http://localhost:8000',
         changeOrigin: true,
       },
     },

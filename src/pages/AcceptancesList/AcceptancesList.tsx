@@ -38,7 +38,7 @@ const AcceptancesList: React.FC = () => {
 
         fetchAcceptances();
 
-        const interval = setInterval(fetchAcceptances, 5000);
+        const interval = setInterval(fetchAcceptances, 10000);
 
         return () => clearInterval(interval);
     }, [dispatch, filter]);
