@@ -157,12 +157,25 @@ export class HttpClient<SecurityDataType = unknown> {
     private secure?: boolean;
     private format?: ResponseType;
 
-    constructor({securityWorker, secure, format, ...axiosConfig}: ApiConfig<SecurityDataType> = {}) {
-        this.instance = axios.create({...axiosConfig, baseURL: axiosConfig.baseURL || "http://localhost:8000/api"});
+    constructor({ securityWorker, secure, format, ...axiosConfig }: ApiConfig<SecurityDataType> = {}) {
+        const fromEnv = (import.meta as any).env?.VITE_API_BASE as string | undefined;
+        const baseURL =
+            (fromEnv && fromEnv.replace(/\/+$/, "")) ||
+            (axiosConfig.baseURL as string) ||
+            "http://localhost:8000/api";
+
+        this.instance = axios.create({
+            ...axiosConfig,
+            baseURL,
+            withCredentials: true,        // шлём cookies
+            xsrfCookieName: "csrftoken",  // имя CSRF-куки Django
+            xsrfHeaderName: "X-CSRFToken" // заголовок для CSRF
+        });
+
         this.secure = secure;
         this.format = format;
         this.securityWorker = securityWorker;
-    }
+        }
 
     public setSecurityData = (data: SecurityDataType | null) => {
         this.securityData = data;
@@ -267,13 +280,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
          * @request GET:/acceptances/
          * @secure
          */
-        acceptancesList: (params?: { query: { status?: string; start_date?: string; end_date?: string } }) =>
+        acceptancesList: (params?: { query?: { status?: string; start_date?: string; end_date?: string } }) =>
             this.request<void, any>({
                 path: `/acceptances/`,
                 method: "GET",
                 secure: true,
-                ...params,
+                query: params?.query,
             }),
+
 
         /**
          * No description
@@ -370,12 +384,12 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
          * @request GET:/engines/
          * @secure
          */
-        enginesList: (params?: { engine_title: any }) =>
+        enginesList: (params?: { engine_title?: string }) =>
             this.request<void, any>({
                 path: `/engines/`,
                 method: "GET",
-                secure: true, query: params,
-                ...params,
+                secure: true,
+                query: params,
             }),
 
         /**

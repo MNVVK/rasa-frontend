@@ -14,25 +14,23 @@ import NotFoundPage from "./pages/ErrorPages/NotFoundPage.tsx";
 import ForbiddenPage from "./pages/ErrorPages/ForbiddenPage.tsx";
 import EnginesTablePage from "./pages/EnginesTablePage/EnginesTablePage.tsx";
 import EngineEditPage from "./pages/EngineEditPage/EngineEditPage.tsx";
-import {tauri} from "./api";
+//import {tauri} from "./api";
 import { useEffect } from "react";
 
 
 
 function App() {
-    
+
     useEffect(() => {
-        // при старте приложения запросим CSRF токен
-        fetch("http://localhost:8000/api/csrf/", {
-            credentials: "include",   // важно! чтобы кука сохранилась в браузере
-        })
+        const base = ((import.meta as any).env?.VITE_API_BASE || "").replace(/\/+$/, "");
+        fetch(`${base}/csrf/`, { credentials: "include" })
             .then((res) => res.json())
             .then((data) => console.log("CSRF fetched:", data))
             .catch((err) => console.error("CSRF error:", err));
-    }, []);
+        }, []);
 
     return (
-        <Router basename={!tauri ?'/rasa-frontend/' : '/'}>
+        <Router basename={import.meta.env.BASE_URL}>
             <div className="d-flex flex-column min-vh-100">
                 <Header/>
 
