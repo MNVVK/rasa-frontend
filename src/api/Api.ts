@@ -280,7 +280,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
          * @request GET:/acceptances/
          * @secure
          */
-        acceptancesList: (params?: { query?: { status?: string; start_date?: string; end_date?: string } }) =>
+        acceptancesList: (params?: { query?: { status?: string; date_start?: string; date_end?: string } }) =>
             this.request<void, any>({
                 path: `/acceptances/`,
                 method: "GET",
