@@ -30,7 +30,7 @@ function App() {
         }, []);
 
     return (
-        <Router basename={import.meta.env.BASE_URL}>
+        <Router basename="/" >
             <div className="d-flex flex-column min-vh-100">
                 <Header/>
 
