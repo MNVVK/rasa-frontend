@@ -164,9 +164,10 @@ export class HttpClient<SecurityDataType = unknown> {
             (axiosConfig.baseURL as string) ||
             "http://localhost:8000/api";
 
+
         this.instance = axios.create({
             ...axiosConfig,
-            baseURL: axiosConfig.baseURL || import.meta.env.VITE_API_BASE || "http://localhost:8000/api", 
+            baseURL,
             withCredentials: true,        // шлём cookies
             xsrfCookieName: "csrftoken",  // имя CSRF-куки Django
             xsrfHeaderName: "X-CSRFToken" // заголовок для CSRF
